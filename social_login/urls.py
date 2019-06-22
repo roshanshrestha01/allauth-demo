@@ -7,6 +7,8 @@ admin.site.site_header = 'Facebook App'
 urlpatterns = [
     path('', include('apps.users.urls')),
     path('admin/', admin.site.urls),
+    path('accounts/', include('allauth.urls')),
+
 ]
 
 if settings.DEBUG:
