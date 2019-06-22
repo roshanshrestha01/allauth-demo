@@ -1,0 +1,6 @@
+.idea
+*.pyc
+*~
+social_login/settings/env.py
+db.sqlite3
+
