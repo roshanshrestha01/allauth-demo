@@ -9,6 +9,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'apps.users',
 ]
 
 MIDDLEWARE = [
@@ -52,3 +54,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, '..', '..', 'static')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, '..', '..', 'media')
 MEDIA_URL = '/media/'
+
+AUTH_USER_MODEL = 'users.User'
