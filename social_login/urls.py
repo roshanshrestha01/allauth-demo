@@ -5,6 +5,7 @@ from django.urls import path, include
 admin.site.site_header = 'Facebook App'
 
 urlpatterns = [
+    path('', include('apps.users.urls')),
     path('admin/', admin.site.urls),
 ]
 

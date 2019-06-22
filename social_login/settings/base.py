@@ -47,6 +47,9 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
+LOGIN_URL = '/sign-up/'
+LOGIN_REDIRECT_URL = 'sign-up'
+
 WSGI_APPLICATION = 'social_login.wsgi.application'
 
 LANGUAGE_CODE = 'en-us'
