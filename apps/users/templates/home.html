@@ -4,11 +4,23 @@
     Home -
 {% endblock %}
 
+{% block header %}
+    {% if request.user.is_authenticated %}
+        <p><a href="{% url 'account_logout' %}">logout</a></p>
+    {% endif %}
+{% endblock %}
+
 {% block content %}
     <div>
-        Image
-        Roshan Shrestha
-        Remove Facebook app
+        {{ request.user.email }}
+        {% if request.user.get_fb_data.name %}
+            <h1>{{ request.user.get_fb_data.name }}</h1>
+        {% endif %}
+        <img src="{{ request.user.get_fb_data.profile_picture_url }}" alt="">
+        <form method="POST" action="{% url 'deactivate' %}">
+            {% csrf_token %}
+            <button>Deactivate</button>
+        </form>
     </div>
 {% endblock %}
 

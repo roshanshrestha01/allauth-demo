@@ -48,6 +48,15 @@ class User(AbstractBaseUser):
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['full_name', 'email']
 
+    @property
+    def get_fb_data(self):
+        name = None
+        profile_picture_url = None
+        for social_app in self.socialaccount_set.all():
+            if social_app.provider == 'facebook':
+                name, profile_picture_url = social_app.extra_data.get('name'), social_app.get_avatar_url()
+        return dict(name=name, profile_picture_url=profile_picture_url)
+
     def get_full_name(self):
         return self.full_name
 
