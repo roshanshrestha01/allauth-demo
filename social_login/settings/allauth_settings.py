@@ -1,6 +1,11 @@
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION = True
 
+# SOCIALACCOUNT_ADAPTER = 'apps.users.adapters.CustomSocialAccountAdapter'
+# ACCOUNT_ADAPTER = 'apps.users.adapters.CustomLoginAccountAdapter'
+SOCIAL_AUTH_INACTIVE_USER_URL = '/inactive-user/'
+
+
 SOCIALACCOUNT_PROVIDERS = {
     'facebook': {
         'METHOD': 'oauth2',

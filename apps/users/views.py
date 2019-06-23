@@ -18,7 +18,7 @@ class DeactivateView(View):
     def post(self, request):
         user = request.user
         user.is_active = False
-        user.socialaccount_set.all().delete()
+        # user.socialaccount_set.all().delete()
         user.save()
         logout(request)
         return redirect('sign-up')

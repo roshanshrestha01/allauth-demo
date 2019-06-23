@@ -132,3 +132,11 @@ input {
 h1, p {
     color: #FFF
 }
+
+li {
+    color: red;
+}
+
+p {
+    margin: 10px;
+}
