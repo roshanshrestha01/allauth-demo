@@ -6,7 +6,7 @@ SECRET_KEY = '_n8_1vxfksbwy0$vwqdc%^4_2kg0n0^jd0363i47i*$rhs0c4n'
 
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'fbapp.duckdns.org']
 
 DATABASES = {
     'default': {
