@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0
+}
+
+body {
+    background: #222526;
+    perspective: 1000px;
+}
+
+.log-in {
+    width: 580px;
+    height: 200px;
+    margin: 100px auto;
+    position: relative
+}
+
+.facebook-link {
+    margin: auto;
+    color: #fff;
+    background: #365195;
+    width: 40%;
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 23px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    cursor: pointer
+}
+
+a {
+    text-decoration: none;
+}
+
+.facebook-link p {
+    color: #FFF;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px
+}
+
+.log-in > span {
+    position: absolute;
+    top: 40px;
+    left: 215px;
+    background: #222526;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #999
+}
