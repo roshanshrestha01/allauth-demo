@@ -2,10 +2,185 @@
 {% load socialaccount %}
 {% providers_media_js %}
 
+{% block extra_css %}
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0
+        }
+
+        body {
+            background: #222526;
+            perspective: 1000px
+        }
+
+        .log-in {
+            width: 580px;
+            height: 200px;
+            margin: 100px auto;
+            position: relative
+        }
+
+        .facebook-link {
+            float: left;
+            color: #fff;
+            background: #365195;
+            width: 40%;
+            text-align: center;
+            padding-top: 60px;
+            padding-bottom: 23px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            cursor: pointer
+        }
+
+        .facebook-link a {
+            color: #FFF;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px
+        }
+
+        .log-in > span {
+            position: absolute;
+            top: 40px;
+            left: 215px;
+            background: #222526;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            color: #999
+        }
+
+        .form-side {
+            width: 48%;
+            float: left;
+            margin-left: 3%;
+            background: #555;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            height: 100%
+        }
+
+        .form-side p {
+            color: #fff;
+            font-weight: bold;
+            text-align: center;
+            padding-top: 20px
+        }
+
+        .form-side form {
+            margin-left: 20px;
+            position: relative
+        }
+
+        .form-side input[type="email"],
+        .form-side input[type="password"] {
+            background: #333;
+            border: none;
+            width: 240px;
+            height: 40px;
+            outline: none;
+            margin-top: 10px;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
+            padding-left: 10px;
+            color: #999
+        }
+
+        .form-side input[type="email"]:hover,
+        .form-side input[type="password"]:hover {
+            -moz-box-shadow: 1px 1px 3px #333,
+            -1px -1px 3px #333;
+            -webkit-box-shadow: 1px 1px 3px #333,
+            -1px -1px 3px #333;
+            box-shadow: 1px 1px 3px #333,
+            -1px -1px 3px #333
+        }
+
+        .form-side span {
+            color: #88887a;
+            display: block;
+            margin-top: 20px
+        }
+
+        .form-side span:hover {
+            color: #fff;
+            cursor: pointer
+        }
+
+        .form-side button {
+            position: absolute;
+            right: -40px;
+            top: 12px;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            padding: 8px;
+            outline: none;
+            background: #222526;
+            border: none;
+            transition: all 1s ease-in-out
+        }
+
+        .form-side button i {
+            background: #ff5f32;
+            border-radius: 50%;
+            padding: 25px;
+            font-weight: bold;
+            font-size: 20px;
+            color: #fff;
+            transition: all 1s ease-in-out;
+        }
+
+        .form-side button:hover i {
+            background: #222526;
+            color: #ff5f32;
+            -moz-transform: rotateY(180deg);
+            -webkit-transform: rotateY(180deg);
+            -ms-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+            transition: all 1s ease-in-out
+        }
+
+        .form-side button:hover {
+            background: #ff5f32
+        }
+
+    </style>
+{% endblock %}
+
 {% block sub_title %}
     Sign Up -
 {% endblock %}
 
 {% block content %}
-    <a href="{% provider_login_url "facebook" method="oauth2" %}">Facebook OAuth2</a>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <div class="log-in">
+        <div class="facebook-link">
+            <i class="fa fa-facebook fa-5x"></i>
+            <a href="{% provider_login_url "facebook" method="oauth2" %}"><p>Connect with Facebook</p></a>
+        </div>
+        <span>or</span>
+        <div class="form-side">
+            <p>Log in with awesome new thing</p>
+            <form action="#" method="post">
+                <input type="email" placeholder="Username Or Email"/>
+                <input type="password" placeholder="Password"/>
+                <span>Forgot your password?</span>
+                <button type="submit">
+                    <i class="fa fa-arrow-right"></i>
+                </button>
+            </form>
+        </div>
+    </div>
 {% endblock %}
