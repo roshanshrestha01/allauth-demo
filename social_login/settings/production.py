@@ -57,3 +57,6 @@ EMAIL_HOST_USER = 'roshanshrestha01@gmail.com'
 DEFAULT_FROM_EMAIL = 'roshanshrestha01@gmail.com'
 SERVER_EMAIL = 'roshanshrestha01@gmail.com'
 EMAIL_HOST_PASSWORD = os.environ['GMAIL_PASSWORD']
+
+
+ACCOUNT_DEFAULT_HTTP_PROTOCOL='https'
