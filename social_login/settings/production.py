@@ -6,6 +6,24 @@ SECRET_KEY = '_n8_1vxfksbwy0$vwqdc%^4_2kg0n0^jd0363i47i*$rhs0c4n'
 
 DEBUG = False
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'logfile': {
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, '..', '..', 'logs', 'debug.log')
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['logfile'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+    },
+}
+
 ALLOWED_HOSTS = ['127.0.0.1', 'fbapp.duckdns.org']
 
 DATABASES = {
