@@ -4,23 +4,35 @@
     Home -
 {% endblock %}
 
-{% block header %}
-    {% if request.user.is_authenticated %}
-        <p><a href="{% url 'account_logout' %}">logout</a></p>
-    {% endif %}
-{% endblock %}
-
 {% block content %}
-    <div>
-        {{ request.user.email }}
-        {% if request.user.get_fb_data.name %}
-            <h1>{{ request.user.get_fb_data.name }}</h1>
-        {% endif %}
-        <img src="{{ request.user.get_fb_data.profile_picture_url }}" alt="">
-        <form method="POST" action="{% url 'deactivate' %}">
-            {% csrf_token %}
-            <button>Deactivate</button>
-        </form>
+    <div class="card" style="width: 20rem;">
+        <div class="card-body">
+            <div class="profile-pic">
+                <img src="{{ request.user.get_fb_data.profile_picture_url }}" alt="{{ request.user.get_fb_data.name }}">
+            </div>
+            {% if request.user.get_fb_data.name %}
+                <h1 class="input-name">{{ request.user.get_fb_data.name }}</h1>
+            {% endif %}
+            <p class="input-username">{{ request.user.email }}</p>
+            <p class="card-text">Demo app to show facebook login using django allauth token.</p>
+            <form method="POST" action="{% url 'deactivate' %}">
+                {% csrf_token %}
+                <button class="btn">Deactivate Facebook</button>
+            </form>
+        <p><a href="{% url 'account_logout' %}">logout</a></p>
+        </div>
     </div>
+{#    <input type="file" id="profile_pic_input" name="profile_pic_input" accept="image/*"/>#}
+{#    <div>#}
+{#        {{ request.user.email }}#}
+{#        {% if request.user.get_fb_data.name %}#}
+{#            <h1>{{ request.user.get_fb_data.name }}</h1>#}
+{#        {% endif %}#}
+{#        <img src="{{ request.user.get_fb_data.profile_picture_url }}" alt="">#}
+{#        <form method="POST" action="{% url 'deactivate' %}">#}
+{#            {% csrf_token %}#}
+{#            <button>Deactivate</button>#}
+{#        </form>#}
+{#    </div>#}
 {% endblock %}
 
