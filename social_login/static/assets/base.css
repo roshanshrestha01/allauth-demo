@@ -7,7 +7,7 @@
 }
 
 body {
-    background: #222526;
+    background: #344e56;
     perspective: 1000px;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
@@ -90,12 +90,14 @@ a {
 input {
     border: none;
     text-align: center;
+    color: #000;
 }
 
 .input-name {
     font-weight: 600;
     font-size: 1.5rem;
     width: 17rem;
+    color: #000;
 }
 
 .input-username {
@@ -106,13 +108,14 @@ input {
 
 .card-text {
     line-height: 1.4;
+    color: #000;
 }
 
 #profile_pic_input {
     display: none;
 }
 
-.btn {
+.btn, button {
     background-color: #bec1c5;
     border: none;
     color: white;
@@ -124,4 +127,8 @@ input {
     margin: 14px 2px 20px;
     cursor: pointer;
     font-weight: bold;
+}
+
+h1, p {
+    color: #FFF
 }
