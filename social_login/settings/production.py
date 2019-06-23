@@ -24,7 +24,7 @@ LOGGING = {
     },
 }
 
-ALLOWED_HOSTS = ['127.0.0.1', 'fbapp.duckdns.org']
+ALLOWED_HOSTS = ['127.0.0.1', 'fbapp.duckdns.org', 'fbapp.hopto.org']
 
 DATABASES = {
     'default': {
